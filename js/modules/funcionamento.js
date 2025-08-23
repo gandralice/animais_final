@@ -5,14 +5,16 @@ export default class Funcionamento {
   }
 
   dadosFuncionamento() {
-    this.diasSemana = funcionamento.dataset.semana.split(",").map(Number);
-    this.horarioSemana = funcionamento.dataset.horario.split(",").map(Number);
+    this.diasSemana = this.funcionamento.dataset.semana.split(",").map(Number);
+    this.horarioSemana = this.funcionamento.dataset.horario
+      .split(",")
+      .map(Number);
   }
 
   dadosAgora() {
     this.dataAgora = new Date();
-    this.diaAgora = dataAgora.getDay();
-    this.horarioAgora = dataAgora.getHours();
+    this.diaAgora = this.dataAgora.getDay();
+    this.horarioAgora = this.dataAgora.getHours();
   }
 
   dadosAberto() {
@@ -24,11 +26,11 @@ export default class Funcionamento {
   }
 
   ativaAberto() {
-    if (this.dadosAberto()) funcionamento.classList.add(this.activeClass);
+    if (this.dadosAberto()) this.funcionamento.classList.add(this.activeClass);
   }
 
   init() {
-    if (this.funcionamentos) {
+    if (this.funcionamento) {
       this.dadosFuncionamento();
       this.dadosAgora();
       this.ativaAberto();
