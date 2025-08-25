@@ -1,0 +1,73 @@
+.slide {
+  grid-column: 1/-1;
+}
+.container-slide {
+  overflow: hidden;
+  grid-column: 1/-1;
+}
+
+.slide-list {
+  display: flex;
+}
+
+.slide-list:hover {
+  will-change: transform;
+}
+
+.slide-list li {
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 20px;
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: 0.4s;
+}
+
+.slide-list li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  grid-column: 1/-1;
+}
+.custom-control li img {
+  opacity: 0.8;
+  transform: scale(0.8);
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.custom-control li.active img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.arrow-nav {
+  display: flex;
+  grid-column: 1/-1;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.arrow-nav .prev,
+.arrow-nav .next {
+  border: none;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  text-indent: -999px;
+  background: #fb5 url("../img/arrow.svg") center no-repeat;
+  cursor: pointer;
+}
+
+.arrow-nav .prev {
+  transform: rotate(-180deg);
+}
